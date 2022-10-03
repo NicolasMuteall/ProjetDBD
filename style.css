@@ -1,0 +1,22 @@
+body {
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    padding: 0 !important;
+}
+
+#banniere {
+    width: 100%;
+    max-height: 45vh;
+}
+
+#test {
+    height: 50em;
+    width: 50%;
+}
+
+ul{
+    margin: auto !important;
+}
