@@ -1,0 +1,39 @@
+body {
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    padding: 0 !important;
+}
+
+#banniere {
+    width: 100%;
+    max-height: 40vh;
+}
+
+#test {
+    height: 50em;
+    width: 50%;
+}
+
+ul{
+    margin: auto !important;
+}
+
+@media screen and (max-height: 345px) {
+    #banniere {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    #banniere {
+        min-height: 15rem;
+    }
+  }
+
+  #connect {
+    max-width: 2rem;
+    max-height: 2rem;
+  }
