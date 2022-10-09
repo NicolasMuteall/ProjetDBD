@@ -1,24 +1,26 @@
 <?php
     session_start();
+    $_SESSION['role'] = 'visit';
     include('head.php');
     include('Connect.php');
 
-    /*$sql = "INSERT into role (NOM_ROLE, REF_IMAGE_ROLE)
-    VALUES ('voleur', 'logo.png')";
-    $cnx->exec($sql);*/
+    $img = $cnx->prepare('select REF_IMAGE_ROLE from role');
+    $img -> execute();
+    $results = $img->fetchall(PDO::FETCH_OBJ);
 ?>
 
 <div id="boiterole" class="container d-flex justify-content-evenly">
-    <div class="role border rounded text-center shadow-lg">
-        <h3 class="mb-3 mt-3">Tueur</h3>
-        <img class="imgrole" src="../images/logotueur.png" alt="logotueur">
+    <div id="boxtueur" class="role border rounded text-center shadow-lg">
+        <a href="personnage.php?role=tueur"><h3 class="mb-3 mt-3">Tueur</h3></a>
+        <a href="personnage.php?role=tueur"><img class="imgrole" src="../images/<?= $results[1]->REF_IMAGE_ROLE; ?>" alt="logotueur"></a>
     </div>
-    <div class="role border rounded text-center shadow-lg">
-        <h3 class="mb-3 mt-3">Survivant</h3>
-        <img class="imgrole" src="../images/logosurvivant.png" alt="logosurvivant">
+    <div id="boxsurvivant" class="role border rounded text-center shadow-lg">
+        <a href="personnage.php?role=survivant"><h3 class="mb-3 mt-3">Survivant</h3></a>
+        <a href="personnage.php?role=survivant"><img class="imgrole" src="../images/<?= $results[0]->REF_IMAGE_ROLE; ?>" alt="logosurvivant"></a>
     </div>
 </div>
-<?php var_dump($_SESSION['role']); ?>
 
+<?php var_dump($_SESSION['role']); ?>
+<script src="../JS/main.js"></script>
 
 <?php include('footer.php') ?>
