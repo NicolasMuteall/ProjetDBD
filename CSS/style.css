@@ -27,7 +27,7 @@ header {
     }
 }
 
-  @media screen and (min-width: 800px) {
+@media screen and (min-width: 800px) {
     #banniere {
         min-height: 15rem;
     }
@@ -123,5 +123,23 @@ header {
   margin-bottom:0;
 }
 
+#boiterole{
+  margin-top: 30vh;
+}
+
+.role {
+  width: 25%;
+  min-height: 15rem;
+}
+
+@media screen and (max-width: 768px) {
+  .role {
+      width: 50%;
+  }
+}
+
+.imgrole {
+  width: 50%;
+}
 
   
