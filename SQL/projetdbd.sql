@@ -1,0 +1,225 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : 127.0.0.1:3306
+-- Généré le : lun. 10 oct. 2022 à 06:45
+-- Version du serveur : 5.7.36
+-- Version de PHP : 7.4.26
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données : `projetdbd`
+--
+CREATE DATABASE IF NOT EXISTS `dbd` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `dbd`;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `admin`
+--
+
+DROP TABLE IF EXISTS `admin`;
+CREATE TABLE IF NOT EXISTS `admin` (
+  `ID_ADMIN` int(11) NOT NULL AUTO_INCREMENT,
+  `PSEUDO_ADMIN` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `PWD_ADMIN` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`ID_ADMIN`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Déchargement des données de la table `admin`
+--
+
+INSERT INTO `admin` (`ID_ADMIN`, `PSEUDO_ADMIN`, `PWD_ADMIN`) VALUES
+(1, 'admin', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `article`
+--
+
+DROP TABLE IF EXISTS `article`;
+CREATE TABLE IF NOT EXISTS `article` (
+  `ID_ARTICLE` int(11) NOT NULL AUTO_INCREMENT,
+  `TITRE_ARTICLE` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `DATE_ARTICLE` date NOT NULL,
+  `CONTENU_ARTICLE` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `REF_IMAGE_ART` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`ID_ARTICLE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `competences`
+--
+
+DROP TABLE IF EXISTS `competences`;
+CREATE TABLE IF NOT EXISTS `competences` (
+  `ID_COMPETENCE` int(11) NOT NULL AUTO_INCREMENT,
+  `NOM_COMPETENCE` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `PRESENTATION_COMPT` text COLLATE utf8_unicode_ci,
+  `REF_IMAGE_COMPT` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`ID_COMPETENCE`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Déchargement des données de la table `competences`
+--
+
+INSERT INTO `competences` (`ID_COMPETENCE`, `NOM_COMPETENCE`, `PRESENTATION_COMPT`, `REF_IMAGE_COMPT`) VALUES
+(1, 'Dure à cuire', 'Présentation Dure à cuire', NULL),
+(2, 'Parenté', 'Présentation Parenté', NULL),
+(3, 'Sur la réserve', 'Présentation Sur la réserve', NULL),
+(4, 'Parfait occasion', 'Présentation Parfait occasion', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `joueur`
+--
+
+DROP TABLE IF EXISTS `joueur`;
+CREATE TABLE IF NOT EXISTS `joueur` (
+  `ID_JOUEUR` int(11) NOT NULL AUTO_INCREMENT,
+  `PSEUDO_JOUEUR` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `PWD_JOUEUR` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `MAIL_JOUEUR` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `NOMBRES_HEURES` int(11) DEFAULT NULL,
+  `PSEUDO_PLATEFORME` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `REF_IMAGE_JOUEUR` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ID_COMPETENCE1` int(11) NOT NULL,
+  `ID_COMPETENCE2` int(11) NOT NULL,
+  `ID_COMPETENCE3` int(11) NOT NULL,
+  `ID_COMPETENCE4` int(11) NOT NULL,
+  `RANK_JOUEUR` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `RANK_MINIMUM_RECHERCHE` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `NOM_PLATEFORME` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `NOM_ROLE` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `ID_TUEUR` int(11) NOT NULL,
+  PRIMARY KEY (`ID_JOUEUR`),
+  KEY `FK_JOUEUR_UTILISE_COMPETENCE1` (`ID_COMPETENCE1`),
+  KEY `FK_JOUEUR_UTILISE_COMPETENCE2` (`ID_COMPETENCE2`),
+  KEY `FK_JOUEUR_UTILISE_COMPETENCE3` (`ID_COMPETENCE3`),
+  KEY `FK_JOUEUR_UTILISE_COMPETENCE4` (`ID_COMPETENCE4`),
+  KEY `FK_JOUEUR_CLASSE_RANK` (`RANK_JOUEUR`),
+  KEY `FK_JOUEUR_RECHERCHE_RANK` (`RANK_MINIMUM_RECHERCHE`),
+  KEY `FK_JOUEUR_JOUE_PLATEFORME` (`NOM_PLATEFORME`),
+  KEY `FK_JOUEUR_JOUE_ROLE` (`NOM_ROLE`),
+  KEY `FK_JOUEUR_JOUE_PERSONNAGE` (`ID_TUEUR`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `personnage`
+--
+
+DROP TABLE IF EXISTS `personnage`;
+CREATE TABLE IF NOT EXISTS `personnage` (
+  `ID_PERSONNAGE` int(11) NOT NULL,
+  `NOM_PERSO` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `PRESENTATION_PERSO` text COLLATE utf8_unicode_ci,
+  `RESUME_PERSO` text COLLATE utf8_unicode_ci,
+  `DATE_SORTIE_PERSO` date DEFAULT NULL,
+  `REF_IMAGE_PERSO` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ID_COMPETENCE1` int(11) NOT NULL,
+  `ID_COMPETENCE2` int(11) NOT NULL,
+  `ID_COMPETENCE3` int(11) NOT NULL,
+  `NOM_ROLE` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`ID_PERSONNAGE`),
+  KEY `FK_PERSONNAGE_UTILISE_COMPETENCE1` (`ID_COMPETENCE1`),
+  KEY `FK_PERSONNAGE_UTILISE_COMPETENCE2` (`ID_COMPETENCE2`),
+  KEY `FK_PERSONNAGE_UTILISE_COMPETENCE3` (`ID_COMPETENCE3`),
+  KEY `FK_PERSONNAGE_JOUE_ROLE` (`NOM_ROLE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `plateforme`
+--
+
+DROP TABLE IF EXISTS `plateforme`;
+CREATE TABLE IF NOT EXISTS `plateforme` (
+  `NOM_PLATEFORME` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`NOM_PLATEFORME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `rank_ge`
+--
+
+DROP TABLE IF EXISTS `rank_ge`;
+CREATE TABLE IF NOT EXISTS `rank_ge` (
+  `NOM_RANK` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `REF_IMAGE_RANK` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`NOM_RANK`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `role`
+--
+
+DROP TABLE IF EXISTS `role`;
+CREATE TABLE IF NOT EXISTS `role` (
+  `NOM_ROLE` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `REF_IMAGE_ROLE` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`NOM_ROLE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Déchargement des données de la table `role`
+--
+
+INSERT INTO `role` (`NOM_ROLE`, `REF_IMAGE_ROLE`) VALUES
+('Survivant', 'logosurvivant.png'),
+('Tueur', 'logotueur.png');
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `joueur`
+--
+ALTER TABLE `joueur`
+  ADD CONSTRAINT `FK_JOUEUR_CLASSE_RANK` FOREIGN KEY (`RANK_JOUEUR`) REFERENCES `rank_ge` (`NOM_RANK`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_JOUEUR_JOUE_PLATEFORME` FOREIGN KEY (`NOM_PLATEFORME`) REFERENCES `plateforme` (`NOM_PLATEFORME`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_JOUEUR_JOUE_ROLE` FOREIGN KEY (`NOM_ROLE`) REFERENCES `role` (`NOM_ROLE`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_JOUEUR_JOUE_PERSONNAGE` FOREIGN KEY (`ID_TUEUR`) REFERENCES `personnage` (`ID_PERSONNAGE`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_JOUEUR_RECHERCHE_RANK` FOREIGN KEY (`RANK_MINIMUM_RECHERCHE`) REFERENCES `rank_ge` (`NOM_RANK`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_JOUEUR_UTILISE_COMPETENCE1` FOREIGN KEY (`ID_COMPETENCE1`) REFERENCES `competences` (`ID_COMPETENCE`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_JOUEUR_UTILISE_COMPETENCE2` FOREIGN KEY (`ID_COMPETENCE2`) REFERENCES `competences` (`ID_COMPETENCE`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_JOUEUR_UTILISE_COMPETENCE3` FOREIGN KEY (`ID_COMPETENCE3`) REFERENCES `competences` (`ID_COMPETENCE`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_JOUEUR_UTILISE_COMPETENCE4` FOREIGN KEY (`ID_COMPETENCE4`) REFERENCES `competences` (`ID_COMPETENCE`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `personnage`
+--
+ALTER TABLE `personnage`
+  ADD CONSTRAINT `FK_PERSONNAGE_JOUE_ROLE` FOREIGN KEY (`NOM_ROLE`) REFERENCES `role` (`NOM_ROLE`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_PERSONNAGE_UTILISE_COMPETENCE1` FOREIGN KEY (`ID_COMPETENCE1`) REFERENCES `competences` (`ID_COMPETENCE`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_PERSONNAGE_UTILISE_COMPETENCE2` FOREIGN KEY (`ID_COMPETENCE2`) REFERENCES `competences` (`ID_COMPETENCE`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_PERSONNAGE_UTILISE_COMPETENCE3` FOREIGN KEY (`ID_COMPETENCE3`) REFERENCES `competences` (`ID_COMPETENCE`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
