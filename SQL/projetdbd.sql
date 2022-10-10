@@ -129,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `joueur` (
 
 DROP TABLE IF EXISTS `personnage`;
 CREATE TABLE IF NOT EXISTS `personnage` (
-  `ID_PERSONNAGE` int(11) NOT NULL,
+  `ID_PERSONNAGE` int(11) NOT NULL AUTO_INCREMENT,
   `NOM_PERSO` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `PRESENTATION_PERSO` text COLLATE utf8_unicode_ci,
   `RESUME_PERSO` text COLLATE utf8_unicode_ci,

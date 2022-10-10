@@ -142,4 +142,19 @@ header {
   width: 50%;
 }
 
+#personnages {
+  padding-left: 7em;
+  padding-right: 7em;
+}
+
+.ligneperso {
+  height: auto;
+}
+
+.boitetueur {
+  height: 15rem;
+  width: 15rem;
+  margin: 1em;
+}
+
   
