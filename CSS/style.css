@@ -128,13 +128,23 @@ header {
   margin-bottom:0;
 }
 
+/*----------------------------------------------------------PAGE ROLE-----------------------------------------------------*/
+
 #boiterole{
   margin-top: 30vh;
 }
 
 .role {
+  cursor: pointer;
+  /*border-color: #424445 !important;SUPPRIMER LE BOOTSRAP ET LE REFAIRE*/
   width: 25%;
   min-height: 15rem;
+  transition: transform .2s; /* Animation */
+}
+
+.role:hover {
+  transform: scale(1.2);
+  background-color: #212426;
 }
 
 @media screen and (max-width: 768px) {
@@ -143,9 +153,16 @@ header {
   }
 }
 
+.titrerole {
+  font-family: 'Another-Danger' !important;
+  color: #fff !important;
+}
+
 .imgrole {
   width: 50%;
 }
+
+/*-------------------------------------------------------PAGE PERSONNAGE----------------------------------------------------*/
 
 #personnages {
   margin-top: 7vh;
@@ -162,15 +179,21 @@ header {
   width: 15rem;
   margin: 1em;
   padding: 0.5em;
+  cursor: pointer;
+  transition: transform .2s; /* Animation */
 }
 
+.boitetueur:hover {
+  transform: scale(1.2);
+  background-color: #212426;
+}
 .imgperso {
   height: 10rem;
-  width: 15rem;
+  width: 14.8rem;
   margin-top: 1.5em;
 }
 
 #nomperso {
   font-family: 'Another-Danger' !important;
+  color: #fff !important;
 }
-  
