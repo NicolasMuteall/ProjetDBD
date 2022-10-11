@@ -30,8 +30,8 @@
             <div class="row ligneperso">
                 <?php foreach($resultperso as $resultat){ ?>
                 <div class="border boitetueur text-center mb-5 rounded shadow-lg">
-                    <h4><?= $resultat->NOM_PERSO ?></h4>
-                    <img class="imgperso img-fluid " src="../images/<?= $_GET['role'] ?>/<?= $resultat->REF_IMAGE_PERSO ?>" alt="<?= $resultat->NOM_PERSO ?>"> 
+                    <h4 class="mt-2" id="nomperso"><?= $resultat->NOM_PERSO ?></h4>
+                    <img class="imgperso" src="../images/<?= $_GET['role'] ?>/<?= $resultat->REF_IMAGE_PERSO ?>" alt="<?= $resultat->NOM_PERSO ?>"> 
                 </div> <?php } ?>
             </div>
         </div>
