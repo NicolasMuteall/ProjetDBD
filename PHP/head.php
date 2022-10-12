@@ -9,9 +9,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" 
     crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="../CSS/style.css">
     <title>Dead by daylight</title>
     <link rel="icon" type="image/png" href="../images/logonoir.png" />
 </head>
@@ -36,7 +36,7 @@
                   <a class="nav-link" href="#">Joueurs</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Se connecter</a>
+                  <a class="nav-link" href="auth/connexion.php">Se connecter</a>
                 </li>
               </ul>
               <form class="d-flex" role="search">

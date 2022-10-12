@@ -197,3 +197,13 @@ header {
   font-family: 'Another-Danger' !important;
   color: #fff !important;
 }
+
+/*---------------------------------------------------PAGE CONNEXION-------------------------------------------------*/
+
+#formconnexion {
+  width: 50%;
+}
+
+.formulaireconnexion {
+  margin-top: 20vh;
+}
