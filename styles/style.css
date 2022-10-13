@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Another-Danger';
-  src: url('../police/another-danger.ttf');
+  src: url('police/another-danger.ttf');
 }
 
 body {
@@ -187,6 +187,7 @@ header {
   transform: scale(1.2);
   background-color: #212426;
 }
+
 .imgperso {
   height: 10rem;
   width: 14.8rem;
