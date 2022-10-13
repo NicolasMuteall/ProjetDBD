@@ -2,8 +2,8 @@
     <div class="row ligneperso">
         <?php foreach($resultperso as $resultat){ ?>
             <div class="border border-secondary boitetueur text-center mb-5 rounded shadow-lg">
-                <a href="character2.php?perso=<?= $resultat->ID_PERSONNAGE ?>"><h4 class="mt-2" id="nomperso"><?= $resultat->NOM_PERSO ?></h4></a>
-                <a href="character2.php?perso=<?= $resultat->ID_PERSONNAGE ?>"><img class="imgperso" src="./assets/<?= $_GET['role'] ?>/<?= $resultat->REF_IMAGE_PERSO ?>" alt="<?= $resultat->NOM_PERSO ?>"></a> 
+                <a href="character2.php?perso=<?= $resultat->ID_PERSONNAGE ?>&amp;role=<?= $_GET['role'] ?>"><h4 class="mt-2" id="nomperso"><?= $resultat->NOM_PERSO ?></h4></a>
+                <a href="character2.php?perso=<?= $resultat->ID_PERSONNAGE ?>&amp;role=<?= $_GET['role'] ?>"><img class="imgperso" src="./assets/<?= $_GET['role'] ?>/<?= $resultat->REF_IMAGE_PERSO ?>" alt="<?= $resultat->NOM_PERSO ?>"></a> 
             </div> <?php } ?>
     </div>
 </div>

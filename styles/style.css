@@ -13,6 +13,8 @@ main {
   min-height: 80vh !important;
 }
 
+/*--------------------------------------------------BANNIERE---------------------------------------------*/
+
 header {
     padding: 0 !important;
 }
@@ -37,6 +39,8 @@ header {
         min-height: 15rem;
     }
 }
+
+/*-----------------------------------------------------FOOTER-------------------------------------------------------*/
 
 .footer-dark {
   padding:50px 0;
@@ -142,9 +146,17 @@ header {
   transition: transform .2s; /* Animation */
 }
 
+#boxtueur{
+  background-color: #ae2012;
+}
+
+#boxsurvivant{
+  background-color: #4361ee;
+}
+
 .role:hover {
   transform: scale(1.2);
-  background-color: #212426;
+  /*background-color: #212426;*/
 }
 
 @media screen and (max-width: 768px) {
@@ -197,6 +209,32 @@ header {
 #nomperso {
   font-family: 'Another-Danger' !important;
   color: #fff !important;
+}
+
+/*-------------------------------------------------------PAGE PERSONNAGE2----------------------------------------------------*/
+
+#InfoChar{
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+.boxchar{
+  min-height: 20rem;
+}
+
+#imgchar{
+  margin-top: 5rem;
+  width: 22rem;
+  height: 15rem;
+}
+
+#presentchar{
+  background-color: #212426;
+  min-height: 20rem;
+}
+
+.statchar{
+  opacity: 50%;
 }
 
 /*---------------------------------------------------PAGE CONNEXION-------------------------------------------------*/

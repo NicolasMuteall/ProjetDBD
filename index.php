@@ -1,5 +1,5 @@
 <?php 
-    session_start()
+    session_start();
     $_SESSION['role'] = 'visit';
     require('./templates/TempHead.php');
     require('./templates/TempIndex.php');

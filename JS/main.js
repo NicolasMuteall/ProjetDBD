@@ -1,10 +1,10 @@
 let tueur = document.getElementById('boxtueur');
     tueur.addEventListener('click',function(){
-        window.location = 'personnage.php?role=tueur';
+        window.location = 'character.php?role=Tueur';
     });
 
 let survivant = document.getElementById('boxsurvivant');
     survivant.addEventListener('click',function(){
-        window.location = 'personnage.php?role=survivant';
+        window.location = 'character.php?role=Survivant';
     });
 
