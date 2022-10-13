@@ -1,3 +1,4 @@
+<?php require('./src/TestEmptySession.php'); ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
