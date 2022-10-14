@@ -233,10 +233,22 @@ header {
   min-height: 20rem;
 }
 
-.statchar{
+.opacite{
   opacity: 50%;
 }
 
+.boxcomp{
+  display: inline-block;
+  min-height: 15rem;
+  width: 20rem;
+  margin: auto;
+  margin-top: 5vh;
+  margin-bottom: 10vh;
+}
+
+.police{
+  font-family: 'Another-Danger' !important;
+}
 /*---------------------------------------------------PAGE CONNEXION-------------------------------------------------*/
 
 #formconnexion {
