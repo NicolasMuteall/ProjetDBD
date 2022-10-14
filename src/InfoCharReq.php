@@ -3,5 +3,5 @@
     $perso -> bindvalue('ID_PERSONNAGE', $_GET['role']);
     $perso -> execute();
     $resultperso = $perso->fetch(PDO::FETCH_OBJ);
-    /*var_dump($resultperso);*/
+    //var_dump($resultperso);
 ?>

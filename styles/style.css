@@ -3,6 +3,11 @@
   src: url('police/another-danger.ttf');
 }
 
+@font-face {
+  font-family: 'Friday13v12';
+  src: url('police/Friday13v12.ttf');
+}
+
 body {
     width: 100%;
     height: 100%;
@@ -191,7 +196,6 @@ header {
   width: 15rem;
   margin: 1em;
   padding: 0.5em;
-  cursor: pointer;
   transition: transform .2s; /* Animation */
 }
 
@@ -222,6 +226,10 @@ header {
   min-height: 20rem;
 }
 
+#boximgchar{
+  background-color: #212426;
+}
+
 #imgchar{
   margin-top: 5rem;
   width: 22rem;
@@ -239,15 +247,30 @@ header {
 
 .boxcomp{
   display: inline-block;
-  min-height: 15rem;
+  min-height: 30rem;
   width: 20rem;
   margin: auto;
   margin-top: 5vh;
   margin-bottom: 10vh;
+  padding: 1rem;
+}
+
+.boxcomp:hover {
+  transform: scale(1.1);
+  background-color: #212426;
+}
+
+.imgcompt{
+  width: 10rem;
+  height: 10rem;
 }
 
 .police{
   font-family: 'Another-Danger' !important;
+}
+
+.police2{
+  font-family: 'Friday13v12' !important;
 }
 /*---------------------------------------------------PAGE CONNEXION-------------------------------------------------*/
 
