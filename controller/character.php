@@ -1,0 +1,11 @@
+<?php
+    session_start();
+    require('../src/TestEmptySession.php');
+    require('../templates/TempHead.php');
+    var_dump($_SESSION['role'],$_GET['role']);
+    require('../src/Connect.php');
+    require('../src/CharacterRoleReq.php');
+    require('../src/Disconnect.php');
+    require('../templates/TempCharacter.php');
+    require('../templates/TempFooter.php');
+?>

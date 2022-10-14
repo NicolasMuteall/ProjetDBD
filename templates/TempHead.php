@@ -1,4 +1,3 @@
-<?php require('./src/TestEmptySession.php'); ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,15 +11,15 @@
     crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="/ProjetDBD/styles/style.css">
     <title>Dead by daylight</title>
-    <link rel="icon" type="image/png" href="./assets/logonoir.png" />
+    <link rel="icon" type="image/png" href="/ProjetDBD/assets/logonoir.png" />
 </head>
 <body class="bg-dark text-white">
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #001219;">
         <div class="container-fluid">
             <a id="logo" class="navbar-brand" href="#">
-                <img src="./assets/logo.png" alt="logodbd" width="60" height="54">
+                <img src="/ProjetDBD/assets/logo.png" alt="logodbd" width="60" height="54">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,10 +27,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul id="listnav" class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="index.php">Accueil</a>
+                  <a class="nav-link" aria-current="page" href="/ProjetDBD/index.php">Accueil</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="role.php">Personnages</a>
+                  <a class="nav-link" href="/ProjetDBD/controller/role.php">Personnages</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Joueurs</a>

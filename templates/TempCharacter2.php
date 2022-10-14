@@ -1,7 +1,7 @@
 <div class="border border-secondary rounded container" id="InfoChar">
     <div class="row">
         <div class="col-12 col-sm-5 boxchar text-center">
-            <img id="imgchar" src="./assets/<?= $_GET['role'] ?>/<?= $resultperso->REF_IMAGE_PERSO ?>" alt="imgpersonnage">
+            <img id="imgchar" src="../assets/<?= $_GET['role'] ?>/<?= $resultperso->REF_IMAGE_PERSO ?>" alt="imgpersonnage">
         </div>
         <div class="col-12 col-sm-7 boxchar">
             <div id="presentchar" class="row p-4 text-center rounded">
