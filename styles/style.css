@@ -275,12 +275,19 @@ header {
 .police2{
   font-family: 'Friday13v12' !important;
 }
+
 /*---------------------------------------------------PAGE CONNEXION-------------------------------------------------*/
 
 #formconnexion {
   width: 50%;
 }
 
-.formulaireconnexion {
-  margin-top: 20vh;
+.formulaire {
+  margin-top: 10vh;
+}
+
+/*---------------------------------------------------PAGE INSCRIPTION-------------------------------------------------*/
+
+#forminscription {
+  width: 50%;
 }

@@ -36,7 +36,7 @@
                   <a class="nav-link" href="#">Joueurs</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="connexion.php">Se connecter</a>
+                  <a class="nav-link" href="/ProjetDBD/controller/connexion.php">Se connecter</a>
                 </li>
               </ul>
               <form class="d-flex" role="search">

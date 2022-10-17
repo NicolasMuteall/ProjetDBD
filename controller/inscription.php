@@ -1,0 +1,9 @@
+<?php
+    session_start();
+    require('../templates/TempHead.php');
+    require('../src/Connect.php');
+    require('../src/FormInscription.php');
+    require('../src/Disconnect.php');
+    require('../templates/TempInscription.php');
+    require('../templates/TempFooter.php');
+?>
