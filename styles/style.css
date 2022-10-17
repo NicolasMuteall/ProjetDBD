@@ -51,6 +51,7 @@ header {
   padding:50px 0;
   color:#f0f9ff;
   background-color:#282d32;
+  margin-top: 10vh;
 }
 
 .footer-dark h3 {
@@ -283,7 +284,7 @@ header {
 }
 
 .formulaire {
-  margin-top: 10vh;
+  margin-top: 15vh;
 }
 
 /*---------------------------------------------------PAGE INSCRIPTION-------------------------------------------------*/

@@ -1,4 +1,4 @@
-<div class="container border formulaire">
+<div class="container border border-secondary rounded shadow-lg formulaire p-5">
     <form id="formconnexion" class="mx-auto mt-3">
     <div class="mb-3">
         <label for="inputpseudo" class="form-label">Pseudo</label>

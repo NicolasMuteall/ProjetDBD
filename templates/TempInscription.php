@@ -22,6 +22,5 @@
         <p>Vous avez déjà un compte ? Se connecter : <a href="connexion.php">Cliquez-ici</a></p>
         <p>(*) : Le champ doit être complété.</p>
     </div>
-    
     </form>
 </div>

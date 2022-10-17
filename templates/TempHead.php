@@ -21,7 +21,7 @@
             <a id="logo" class="navbar-brand" href="#">
                 <img src="/ProjetDBD/assets/logo.png" alt="logodbd" width="60" height="54">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -36,7 +36,10 @@
                   <a class="nav-link" href="#">Joueurs</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/ProjetDBD/controller/connexion.php">Se connecter</a>
+                  <?= $linkhead ?>
+                </li>
+                <li class="nav-item">
+                  <?= $deconnect ?>
                 </li>
               </ul>
               <form class="d-flex" role="search">
