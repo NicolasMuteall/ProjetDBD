@@ -149,6 +149,7 @@ header {
   width: 25%;
   min-height: 15rem;
   transition: transform .2s; /* Animation */
+  box-shadow: 5px 5px 10px #202020, -5px -5px 10px #464646;
 }
 
 #boxtueur{
@@ -197,6 +198,7 @@ header {
   margin: 1em;
   padding: 0.5em;
   transition: transform .2s; /* Animation */
+  box-shadow: 5px 5px 10px #202020, -5px -5px 10px #464646;
 }
 
 .boitetueur:hover {
@@ -253,6 +255,7 @@ header {
   margin-top: 5vh;
   margin-bottom: 10vh;
   padding: 1rem;
+  box-shadow: 5px 5px 10px #202020, -5px -5px 10px #464646;
 }
 
 .boxcomp:hover {
