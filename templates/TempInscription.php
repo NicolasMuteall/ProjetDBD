@@ -3,10 +3,12 @@
     <div class="mb-3">
         <label for="inputpseudo" class="form-label">Pseudo*</label>
         <input type="text" name="pseudo" class="form-control" id="inputpseudo" placeholder="Entrez votre pseudo..." value="<?php if(isset($_POST['pseudo'])){ echo $_POST['pseudo']; } ?>">
+        <?= $msgpseudo ?>
     </div>
     <div class="mb-3">
         <label for="inputemail" class="form-label">Adresse email*</label>
         <input type="email" name="mail" class="form-control" id="inputemail" placeholder="Entrez votre adresse email..." value="<?php if(isset($_POST['mail'])){ echo $_POST['mail']; } ?>">
+        <?= $msgmail ?>
     </div>
     <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Mot de passe*</label>

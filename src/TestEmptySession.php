@@ -1,7 +1,7 @@
 <?php   
-    if(!isset($_SESSION['role'])){
+    /*if(!isset($_SESSION['role'])){
       header('Location: /ProjetDBD/controller/role.php');
-    }
+    }*/
 
     if(!isset($_SESSION['pseudo'])){
       $_SESSION['pseudo'] = "inconnu";

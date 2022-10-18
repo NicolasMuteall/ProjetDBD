@@ -1,6 +1,7 @@
 <?php
     session_start();
     require('../src/TestEmptySession.php');
+    require('../src/TestSessionRole.php');
     require('../templates/TempHead.php');
     var_dump($_SESSION['role'], $_GET['perso'], $_GET['role']);
     require('../src/Connect.php');
