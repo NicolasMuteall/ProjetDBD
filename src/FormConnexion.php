@@ -18,7 +18,9 @@
             if($results){
                 $passwordHash = $results['PWD_JOUEUR'];
                 if(password_verify($password, $passwordHash)){
-                    $msgerror = '<p style="color:red;">Connexion réussie.</p>';
+                    $msgerror = '<p style="color:green;">Connexion réussie.</p>';
+                    $_SESSION['pseudo'] = $pseudo;
+                    header('Location: ../index.php');
                 }else{
                     $msgerror = '<p style="color:red;">Les identifiants sont incorrects.</p>';
                 }

@@ -292,3 +292,24 @@ header {
 #forminscription {
   width: 50%;
 }
+
+/*---------------------------------------------------PAGE PROFIL-------------------------------------------------*/
+
+#imgprofil {
+  width: 13rem;
+  height: 12rem;
+  clip-path:ellipse(50% 50%);
+}
+
+#boxprofil {
+  background-color: #212426;
+}
+
+.boxprofilsmall {
+  min-height: 20rem;
+}
+
+#tableauprofil {
+  width: 25rem !important;
+}
+

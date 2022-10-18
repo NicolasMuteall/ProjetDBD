@@ -7,6 +7,6 @@
         $linkhead = '<a class="nav-link" href="/ProjetDBD/controller/connexion.php">Se connecter</a>';
         $deconnect = "";
     }else{
-        $linkhead = '<a class="nav-link" href="/ProjetDBD/controller/connexion.php">Profil</a>';
+        $linkhead = '<a class="nav-link" href="/ProjetDBD/controller/profil.php">Profil</a>';
         $deconnect = '<a class="nav-link" href="/ProjetDBD/src/DisconnectUser.php">Déconnexion</a>';
     }   
