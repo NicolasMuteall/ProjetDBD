@@ -1,15 +1,16 @@
 <div class="container border border-secondary rounded shadow-lg formulaire p-5">
-    <form id="formconnexion" class="mx-auto mt-3">
+    <form id="formconnexion" action="" method="post" class="mx-auto mt-3">
     <div class="mb-3">
         <label for="inputpseudo" class="form-label">Pseudo</label>
-        <input type="text" class="form-control" id="inputpseudo" placeholder="Entrez votre pseudo...">
+        <input type="text" class="form-control" name="pseudo" id="inputpseudo" placeholder="Entrez votre pseudo..." value="<?php if(isset($_POST['pseudo'])){ echo $_POST['pseudo']; } ?>">
     </div>
     <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Entrez votre mot de passe...">
+        <input type="password" class="form-control" name="mdp" id="exampleInputPassword1" placeholder="Entrez votre mot de passe..." value="<?php if(isset($_POST['mdp'])){ echo $_POST['mdp']; } ?>">
     </div>
     <div class="text-center mt-4">
-        <button type="submit" class="btn btn-primary mb-3">Connexion</button>
+        <?= $msgerror ?>
+        <button type="submit" name="connexion" class="btn btn-primary mb-3">Connexion</button>
         <p>Vous n'avez pas de compte ? Inscrivez-vous ! <a href="inscription.php">S'inscrire</a></p>
     </div>
     

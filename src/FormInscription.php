@@ -2,6 +2,7 @@
     $msgerror = "";
     $msgpseudo = "";
     $msgmail = "";
+    $headerlocation = "";
 
     if(isset($_POST['inscription'])){ 
         
@@ -18,7 +19,7 @@
             $datapseudo = $cnx->prepare('select PSEUDO_JOUEUR from joueur where PSEUDO_JOUEUR = "'.$pseudo.'"');
             $datapseudo -> bindvalue('PSEUDO_JOUEUR', $pseudo);
             $datapseudo -> execute();
-            $resultpseudo = $datapseudo->fetch(PDO::FETCH_OBJ);                            //CONTINUER VERIF EXISTENCE PSEUDO DANS BDD
+            $resultpseudo = $datapseudo->fetch(PDO::FETCH_OBJ);                          
             var_dump($resultpseudo);
 
             
@@ -32,7 +33,7 @@
                 $msgpseudo = '<p style="color:red;">Le pseudo saisi est déjà utilisé.</p>';
             }
 
-            if(strlen($pseudo) <= 4 || strlen($pseudo) >= 20){
+            if(strlen($pseudo) < 4 || strlen($pseudo) > 20){
                 $msgpseudo = '<p style="color:red;">Le pseudo doit contenir entre 4 et 20 caractères.</p>';
             }
 
@@ -51,32 +52,23 @@
             if(strlen($pseudo) >= 4 && strlen($pseudo) <= 20 && $resultpseudo === false && $resultmail === false && preg_match('/^[a-z][a-z_0-9\.\-]+@[a-z_0-9\.\-]+\.[a-z]{2,3}$/', $mail) && preg_match('/^(?=.{10,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$/', $mdp)){
                 
                 if($mdp === $mdpconfirm){
-   
-                        //$_SESSION['pseudo'] = $pseudo;
-                        //header('Location: ../index.php');
+                    
+                    $q = $cnx->prepare('INSERT INTO joueur (PSEUDO_JOUEUR, PWD_JOUEUR, MAIL_JOUEUR) VALUES ("'.$pseudo.'", "'.$password.'", "'.$mail.'")');
+                    $q -> bindvalue('PSEUDO_JOUEUR', $pseudo);
+                    $q -> bindvalue('PWD_JOUEUR', $password);
+                    $q -> bindvalue('MAIL_JOUEUR', $mail);
+                    $res = $q -> execute();
+                    $msgerror = "Inscription bien effectuée, bienvenue!";
+                    
+                    header('Location: connexion.php');
+
                 }else{
                     $msgerror = '<p style="color:red;">La confirmation du mot de passe est incorrecte.</p>';
                 }
             }
         }else{
             $msgerror = '<p style="color:red;">Tous les champs doivent être complétés.</p>';
-        } 
+        }   
+    };   
 
-            
-            
-            /*$q = $cnx->prepare('INSERT INTO joueur (pseudo, password) VALUES ("'.$pseudo.'", "'.$password.'")');
-            $q -> bindvalue('pseudo', $pseudo);
-            $q -> bindvalue('password', $password);
-            $res = $q -> execute();*/
-
-            /*if($res){
-                echo "Inscription réussie.";
-                header('Location: page2.php');
-            }else{
-                echo "Une erreur est survenue.";
-            }*/
-            
-    };
-    
-?>
 
