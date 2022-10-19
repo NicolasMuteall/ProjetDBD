@@ -3,9 +3,9 @@
     require('../src/TestEmptySession.php');
     require('../src/RedirectSessInconnu.php');
     require('../src/Connect.php');
+    require('../templates/TempHead.php');
     require('../src/ProfilReq.php');
     require('../src/TestRoleProfil.php');
-    require('../templates/TempHead.php');
     var_dump($_SESSION['pseudo']);
     require('../src/Disconnect.php');
     require('../templates/TempProfil.php');
