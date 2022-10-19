@@ -313,3 +313,8 @@ header {
   width: 25rem !important;
 }
 
+#listcomp {
+  font-size: 0.75em;
+  list-style-type: disc;
+}
+
