@@ -1,6 +1,7 @@
 <?php
     $msgerror = "";
     $msgpseudo = "";
+    $msgmdp = "";
     $msgmail = "";
     $headerlocation = "";
 
@@ -28,13 +29,17 @@
             $datamail -> execute();
             $resultmail = $datamail->fetch(PDO::FETCH_OBJ);                            
             var_dump($resultmail);
+            
+            if(strlen($pseudo) < 4 || strlen($pseudo) > 20 || !preg_match('/^([a-zA-Z0-9-_]{4,20})$/', $pseudo)){
+                $msgpseudo = '<p style="color:red;">Le pseudo saisi est invalide : <br> Le pseudo doit contenir entre 4 et 20 caractères et ne peut contenir que des lettres minuscules, majuscules, des chiffres, "-", "_".</p>';
+            }
+
+            /*if(!preg_match('/^([a-zA-Z0-9-_]{4,20})$/', $pseudo)){
+                $msgpseudo = '<p style="color:red;">Le format du pseudo saisi n\'est pas autorisé.</p>';
+            }*/
 
             if($resultpseudo != false){
                 $msgpseudo = '<p style="color:red;">Le pseudo saisi est déjà utilisé.</p>';
-            }
-
-            if(strlen($pseudo) < 4 || strlen($pseudo) > 20){
-                $msgpseudo = '<p style="color:red;">Le pseudo doit contenir entre 4 et 20 caractères.</p>';
             }
 
             if($resultmail != false){
@@ -46,10 +51,10 @@
             }
             
             if(!preg_match('/^(?=.{10,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$/', $mdp)){
-                $msgerror = '<p style="color:red;">Le mot de passe doit contenir au moins 1 majuscule, 1 minuscule, 1 chiffre, 1 caractère spécial et doit contenir au moins 10 caractères.</p>';
+                $msgmdp = '<p style="color:red;">Le mot de passe doit contenir au moins 1 majuscule, 1 minuscule, 1 chiffre, 1 caractère spécial et doit contenir au moins 10 caractères.</p>';
             }
 
-            if(strlen($pseudo) >= 4 && strlen($pseudo) <= 20 && $resultpseudo === false && $resultmail === false && preg_match('/^[a-z][a-z_0-9\.\-]+@[a-z_0-9\.\-]+\.[a-z]{2,3}$/', $mail) && preg_match('/^(?=.{10,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$/', $mdp)){
+            if(preg_match('/^([a-zA-Z0-9-_]{4,20})$/', $pseudo) && strlen($pseudo) >= 4 && strlen($pseudo) <= 20 && $resultpseudo === false && $resultmail === false && preg_match('/^[a-z][a-z_0-9\.\-]+@[a-z_0-9\.\-]+\.[a-z]{2,3}$/', $mail) && preg_match('/^(?=.{10,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$/', $mdp)){
                 
                 if($mdp === $mdpconfirm){
                     

@@ -1,8 +1,10 @@
 <?php
     session_start();
     require('../src/TestEmptySession.php');
+    require('../src/RedirectSessInconnu.php');
     require('../src/Connect.php');
-    //require('../src/FormConnexion.php');
+    require('../src/ProfilReq.php');
+    require('../src/TestRoleProfil.php');
     require('../templates/TempHead.php');
     var_dump($_SESSION['pseudo']);
     require('../src/Disconnect.php');

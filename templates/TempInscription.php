@@ -13,6 +13,7 @@
     <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Mot de passe*</label>
         <input type="password" name="mdp" class="form-control" id="exampleInputPassword1" placeholder="Entrez votre mot de passe..." value="<?php if(isset($_POST['mdp'])){ echo $_POST['mdp']; } ?>">
+        <?= $msgmdp ?>
     </div>
     <div class="mb-3">
         <label for="ConfirmInputPassword1" class="form-label">Confirmer le mot de passe*</label>
