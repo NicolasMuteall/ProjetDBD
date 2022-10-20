@@ -1,4 +1,4 @@
-<div class="container border border-secondary rounded shadow-lg formulaire p-5">
+<div class="container border border-secondary rounded shadow-lg formulaire p-3">
     <h3 class="mb-5 police2">Modifier les informations de votre profil:</h3>
     <form id="" class="mx-auto mt-3 formsize" action="" method="post">
         <div class="mb-3">
