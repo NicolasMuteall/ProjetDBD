@@ -1,5 +1,5 @@
 <div class="container-fluid text-end mb-5">
-    <button type="button" class="btn btn-light me-3">Modifier le profil</button>
+    <button type="button" onclick="location.href='updateprofil.php';" class="btn btn-light me-3">Modifier le profil</button>
 </div>
 <div class="container border border-secondary rounded">
     <div id="boxprofil" class="row">
