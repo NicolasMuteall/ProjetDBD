@@ -1,4 +1,4 @@
-<div class="container border border-secondary rounded shadow-lg formulaire p-3">
+<div id="modifinfo" class="container border border-secondary rounded shadow-lg formulaire p-3">
     <h3 class="mb-5 police2">Modifier les informations de votre profil:</h3>
 
     <form action="" method="post" class="d-flex mb-5" enctype="multipart/form-data">

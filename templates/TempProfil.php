@@ -4,7 +4,7 @@
 <div class="container border border-secondary shadow-lg rounded">
     <div id="boxprofil" class="row">
         <article class="boxprofilsmall col-12 col-md-4 p-3 text-center">
-            <img id="imgprofil" class="mt-4 mb-3" src="../assets/Joueurs/<?= $resultprofil->REF_IMAGE_JOUEUR ?>" alt="mastermind">
+            <img id="" class="mt-4 mb-3 imgprofil" src="../assets/Joueurs/<?= $resultprofil->REF_IMAGE_JOUEUR ?>" alt="mastermind">
             <p class="fw-bold"><?= $resultprofil->PSEUDO_JOUEUR ?></p>
         </article>
         <article class="boxprofilsmall col-12 col-md-8 p-3 ">
