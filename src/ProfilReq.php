@@ -13,6 +13,7 @@
     $resulttueur = $killerprofil->fetch(PDO::FETCH_OBJ);
     //var_dump($resulttueur);
 
+    /*------------------------------------------RECUP LE NOM DES COMPETENCES DE LA TABLE JOUEUR ---------------------------------------------*/
     $compt1 = $cnx->prepare('select NOM_COMPETENCE from competences JOIN joueur on joueur.ID_COMPETENCE1 = competences.ID_COMPETENCE where PSEUDO_JOUEUR = "'.$_SESSION['pseudo'].'"');
     $compt1 -> bindvalue('PSEUDO_JOUEUR', $_SESSION['pseudo']);
     $compt1 -> execute();

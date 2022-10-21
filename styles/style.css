@@ -295,7 +295,7 @@ header {
 
 /*---------------------------------------------------PAGE PROFIL-------------------------------------------------*/
 
-#imgprofil {
+.imgprofil {
   width: 13rem;
   height: 12rem;
   clip-path:ellipse(50% 50%);

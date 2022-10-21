@@ -1,4 +1,44 @@
 <?php
+    $msgerrorimg = '';
+
+    if(isset($_POST['img_submit'])){
+
+        $img_name = $_FILES['img_upload']['name'];
+        $tmp_img_name = $_FILES['img_upload']['tmp_name'];
+        $size_img = $_FILES['img_upload']['size'];
+        $typeFile = $_FILES['img_upload']['type'];
+        $typeimg = ['image/png', 'image/jpg', 'image/jpeg'];
+        $extension = explode('.', $img_name);
+        $folder = '../assets/Joueurs/';
+        var_dump($_FILES, $extension, count($extension));
+        
+        if($_FILES['img_upload']['size'] > 0){
+
+            if(count($extension) === 2){
+
+                if(in_array($typeFile, $typeimg)) {
+                    move_uploaded_file($tmp_img_name, $folder.$img_name);
+    
+                    $updateimg = $cnx->prepare('UPDATE joueur SET REF_IMAGE_JOUEUR = "'.$img_name.'" WHERE PSEUDO_JOUEUR ="'.$_SESSION['pseudo'].'"');
+                    $resimg = $updateimg -> execute();
+    
+                    if($resimg){
+                    //$_SESSION['pseudo']=$pseudo;
+                    header('Location: profil.php?test=refresh');
+                    }
+                    
+                }else{
+                    $msgerrorimg = '<p style="color:red;">Ce format d\'image n\'est pas autorisé.</p>';
+                }
+
+            }else{
+                $msgerrorimg = '<p style="color:red;">Ce format d\'image n\'est pas autorisé.</p>';
+            }           
+        }else{
+            $msgerrorimg = '<p style="color:red;">Aucune image n\'a été sélectionnée.</p>';
+        }
+    }
+
     if(isset($_POST['submitrole'])){ 
             $q2 = $cnx->prepare('UPDATE joueur SET NOM_ROLE = "'.$_POST['selectrole'].'" WHERE PSEUDO_JOUEUR ="'.$_SESSION['pseudo'].'"');
             $res2 = $q2 -> execute();
