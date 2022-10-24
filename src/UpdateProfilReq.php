@@ -1,6 +1,6 @@
 <?php
     /*----------------------------------RECUP TOUS LES ROLES SAUF LE ROLE ACTUEL DU JOUEUR------------------------------------*/
-    $role = $cnx->prepare('SELECT NOM_ROLE FROM `role`  WHERE NOM_ROLE != "'.$resultprofil->NOM_ROLE.'" ORDER BY `role`.`NOM_ROLE` DESC LIMIT 1');
+    $role = $cnx->prepare('SELECT NOM_ROLE FROM `role`  WHERE NOM_ROLE != "'.$resultprofil->NOM_ROLE.'"');
     $role -> execute();
     $resultrole = $role->fetchall(PDO::FETCH_OBJ);
     //var_dump($resultrole);
@@ -17,9 +17,14 @@
     $resultrankupdate = $rankupdate->fetchall(PDO::FETCH_OBJ);
     //var_dump($resultrankupdate);
 
-    $selectcompt1 = $cnx->prepare('select NOM_COMPETENCE, ID_COMPETENCE from competences where NOM_COMPETENCE != "'.$resultcompt1->NOM_COMPETENCE.'"');
-    $selectcompt1 -> bindvalue('PSEUDO_JOUEUR', $_SESSION['pseudo']);
-    $selectcompt1 -> bindvalue('NOM_COMPETENCE', $resultcompt1->NOM_COMPETENCE);
+    /*----------------------------------------SELECTIONNE LES COMPETENCES SAUF CELLE DEJA DANS LA BDD-----------------------------------*/
+    $selectcompt1 = $cnx->prepare('select NOM_COMPETENCE, ID_COMPETENCE from competences where NOM_COMPETENCE != "'.$resultcompt1->NOM_COMPETENCE.'" and NOM_COMPETENCE != "'.$resultcompt2->NOM_COMPETENCE.'" and NOM_COMPETENCE != "'.$resultcompt3->NOM_COMPETENCE.'" and NOM_COMPETENCE != "'.$resultcompt4->NOM_COMPETENCE.'" and SURVIVANT_TUEUR = "'.$rolecompt.'"');
     $selectcompt1 -> execute();
     $resultselectcompt1 = $selectcompt1->fetchall(PDO::FETCH_OBJ);
-    var_dump($resultselectcompt1);
+    //var_dump($resultselectcompt1);
+
+    /*-------------------------------------------SELECTIONNE LES PLATEFORME SAUF CELLE DU JOUEUR------------------------------------------*/
+    $plateformeupdate = $cnx->prepare('SELECT NOM_PLATEFORME FROM `plateforme` WHERE NOM_PLATEFORME != "'.$resultprofil->NOM_PLATEFORME.'"');
+    $plateformeupdate -> execute();
+    $resultplateformeupdate = $plateformeupdate->fetchall(PDO::FETCH_OBJ);
+    //var_dump($resultrankupdate);

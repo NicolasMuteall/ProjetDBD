@@ -327,3 +327,8 @@ header {
 .formsize {
   width: 70%;
 }
+
+.selectcomp {
+  width: 75%;
+  margin: auto;
+}

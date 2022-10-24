@@ -4,8 +4,9 @@
     $msgerror = "";
     $msgpseudo = "";
     $msgmail = "";
+    $msgpseudoplat = "";
 
-    if($resultprofil->NOM_ROLE === "Tueur"){
+    if($resultprofil->NOM_ROLE === "Tueur"){ // Permet par la suite de trier les compétences de survivants et tueurs
         $rolecompt = 1;
     }else{
         $rolecompt = 0;

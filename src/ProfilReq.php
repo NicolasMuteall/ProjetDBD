@@ -18,21 +18,21 @@
     $compt1 -> bindvalue('PSEUDO_JOUEUR', $_SESSION['pseudo']);
     $compt1 -> execute();
     $resultcompt1 = $compt1->fetch(PDO::FETCH_OBJ);
-    var_dump($resultcompt1);
+    //var_dump($resultcompt1);
 
-    $compt2 = $cnx->prepare('select NOM_COMPETENCE from competences JOIN joueur on joueur.ID_COMPETENCE2 = competences.ID_COMPETENCE where PSEUDO_JOUEUR = "'.$_SESSION['pseudo'].'"');
+    $compt2 = $cnx->prepare('select NOM_COMPETENCE, ID_COMPETENCE from competences JOIN joueur on joueur.ID_COMPETENCE2 = competences.ID_COMPETENCE where PSEUDO_JOUEUR = "'.$_SESSION['pseudo'].'"');
     $compt2 -> bindvalue('PSEUDO_JOUEUR', $_SESSION['pseudo']);
     $compt2 -> execute();
     $resultcompt2 = $compt2->fetch(PDO::FETCH_OBJ);
     //var_dump($resultcompt2);
 
-    $compt3 = $cnx->prepare('select NOM_COMPETENCE from competences JOIN joueur on joueur.ID_COMPETENCE3 = competences.ID_COMPETENCE where PSEUDO_JOUEUR = "'.$_SESSION['pseudo'].'"');
+    $compt3 = $cnx->prepare('select NOM_COMPETENCE, ID_COMPETENCE from competences JOIN joueur on joueur.ID_COMPETENCE3 = competences.ID_COMPETENCE where PSEUDO_JOUEUR = "'.$_SESSION['pseudo'].'"');
     $compt3 -> bindvalue('PSEUDO_JOUEUR', $_SESSION['pseudo']);
     $compt3 -> execute();
     $resultcompt3 = $compt3->fetch(PDO::FETCH_OBJ);
     //var_dump($resultcompt3);
 
-    $compt4 = $cnx->prepare('select NOM_COMPETENCE from competences JOIN joueur on joueur.ID_COMPETENCE4 = competences.ID_COMPETENCE where PSEUDO_JOUEUR = "'.$_SESSION['pseudo'].'"');
+    $compt4 = $cnx->prepare('select NOM_COMPETENCE, ID_COMPETENCE from competences JOIN joueur on joueur.ID_COMPETENCE4 = competences.ID_COMPETENCE where PSEUDO_JOUEUR = "'.$_SESSION['pseudo'].'"');
     $compt4 -> bindvalue('PSEUDO_JOUEUR', $_SESSION['pseudo']);
     $compt4 -> execute();
     $resultcompt4 = $compt4->fetch(PDO::FETCH_OBJ);
