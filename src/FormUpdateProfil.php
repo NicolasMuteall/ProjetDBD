@@ -10,7 +10,8 @@
         $typeimg = ['image/png', 'image/jpg', 'image/jpeg'];
         $extension = explode('.', $img_name);
         $folder = '../assets/Joueurs/';
-        var_dump($_FILES, $extension, count($extension));
+        //var_dump($_FILES, $extension, count($extension));
+        //var_dump($_SERVER);
         
         if($_FILES['img_upload']['size'] > 0){
 
@@ -23,8 +24,8 @@
                     $resimg = $updateimg -> execute();
     
                     if($resimg){
-                    //$_SESSION['pseudo']=$pseudo;
-                    header('Location: profil.php?test=refresh');
+                    // header('Location: profil.php?test=refresh');
+                    header('Refresh:0; '.$_SERVER["REQUEST_URI"]);
                     }
                     
                 }else{
@@ -44,8 +45,7 @@
             $res2 = $q2 -> execute();
 
             if($res2){
-                //$_SESSION['pseudo']=$pseudo;
-                header('Location: profil.php?test=refresh');
+                header('Refresh:0; '.$_SERVER["REQUEST_URI"]);
             }
     }
 
@@ -59,7 +59,7 @@
 
             if($res){
                 $_SESSION['pseudo']=$pseudo;
-                header('Location: profil.php?test=refresh');
+                header('Refresh:0; '.$_SERVER["REQUEST_URI"]);
             }
         }
 

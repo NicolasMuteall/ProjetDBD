@@ -4,7 +4,7 @@
     <form action="" method="post" class="d-flex mb-5" enctype="multipart/form-data">
         <div class="mx-auto d-flex">
         <img class="imgprofil" class="mt-4 mb-3" src="../assets/Joueurs/<?= $resultprofil->REF_IMAGE_JOUEUR ?>" alt="mastermind">
-        <div class="mt-5 ms-3">
+        <div class="mt-5 ms-5">
             <label for="formFile" class="form-label">Sélectionner une autre image :</label>
             <input class="form-control" type="file" name="img_upload" id="formFile">
             <?= $msgerrorimg ?>
