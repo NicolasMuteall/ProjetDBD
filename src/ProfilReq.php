@@ -14,11 +14,11 @@
     //var_dump($resulttueur);
 
     /*------------------------------------------RECUP LE NOM DES COMPETENCES DE LA TABLE JOUEUR ---------------------------------------------*/
-    $compt1 = $cnx->prepare('select NOM_COMPETENCE from competences JOIN joueur on joueur.ID_COMPETENCE1 = competences.ID_COMPETENCE where PSEUDO_JOUEUR = "'.$_SESSION['pseudo'].'"');
+    $compt1 = $cnx->prepare('select NOM_COMPETENCE, ID_COMPETENCE from competences JOIN joueur on joueur.ID_COMPETENCE1 = competences.ID_COMPETENCE where PSEUDO_JOUEUR = "'.$_SESSION['pseudo'].'"');
     $compt1 -> bindvalue('PSEUDO_JOUEUR', $_SESSION['pseudo']);
     $compt1 -> execute();
     $resultcompt1 = $compt1->fetch(PDO::FETCH_OBJ);
-    //var_dump($resultcompt1);
+    var_dump($resultcompt1);
 
     $compt2 = $cnx->prepare('select NOM_COMPETENCE from competences JOIN joueur on joueur.ID_COMPETENCE2 = competences.ID_COMPETENCE where PSEUDO_JOUEUR = "'.$_SESSION['pseudo'].'"');
     $compt2 -> bindvalue('PSEUDO_JOUEUR', $_SESSION['pseudo']);

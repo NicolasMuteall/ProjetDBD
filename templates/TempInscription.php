@@ -1,5 +1,5 @@
 <div class="container border border-secondary rounded shadow-lg formulaire p-5">
-    <form id="forminscription" class="mx-auto mt-3" action="<?= $headerlocation ?>" method="post">
+    <form id="forminscription" class="mx-auto mt-3" action="" method="post">
     <div class="mb-3">
         <label for="inputpseudo" class="form-label">Pseudo*</label>
         <input type="text" name="pseudo" class="form-control" id="inputpseudo" placeholder="Entrez votre pseudo..." value="<?php if(isset($_POST['pseudo'])){ echo $_POST['pseudo']; } ?>">

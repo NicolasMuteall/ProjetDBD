@@ -33,11 +33,13 @@
         <div class="mb-3">
             <label for="inputpseudo" class="form-label">Pseudo*</label>
             <input type="text" name="pseudo" class="form-control" id="inputpseudo" placeholder="Entrez votre pseudo..." value="<?= $resultprofil->PSEUDO_JOUEUR ?>">
+            <?= $msgpseudo ?>
         </div>
 
         <div class="mb-3">
             <label for="inputemail" class="form-label">Adresse email*</label>
             <input type="email" name="mail" class="form-control" id="inputemail" placeholder="Entrez votre adresse email..." value="<?= $resultprofil->MAIL_JOUEUR ?>">
+            <?= $msgmail ?>
         </div>
 
         <div class="mb-3">
@@ -60,7 +62,18 @@
             </select>
         </div>
 
+        <div class="mb-3">
+            <label for="selectcomp1" class="form-label">Selectionnez vos compétences préférées :</label>
+            <select id="selectcomp1" class="form-select" aria-label="Default select example">
+                <option selected value="<?= $resultcompt1->ID_COMPETENCE ?>"><?= $resultcompt1->NOM_COMPETENCE ?> (actuel)</option>
+                <?php for($i = 0; $i < count($resultselectcompt1); $i++){ ?>
+                    <option value="<?= $resultselectcompt1[$i]->ID_COMPETENCE ?>"><?= $resultselectcompt1[$i]->NOM_COMPETENCE ?></option>
+                <?php } ?>
+            </select>
+        </div>
+
         <div class="text-center mt-4">
+            <?= $msgerror ?>
             <button type="submit" name="submit" class="btn btn-primary mb-3">Enregistrer</button>
             <p>(*) : Le champ doit être complété.</p>
         </div>

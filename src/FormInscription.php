@@ -3,7 +3,6 @@
     $msgpseudo = "";
     $msgmdp = "";
     $msgmail = "";
-    $headerlocation = "";
 
     if(isset($_POST['inscription'])){ 
         
@@ -39,7 +38,7 @@
             }*/
 
             if($resultpseudo != false){
-                $msgpseudo = '<p style="color:red;">Le pseudo saisi est déjà utilisé.</p>';
+                $msgpseudo = '<p style="color:red;">Le pseudo est déjà utilisé.</p>';
             }
 
             if($resultmail != false){
