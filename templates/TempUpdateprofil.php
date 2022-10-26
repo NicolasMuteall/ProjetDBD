@@ -46,17 +46,17 @@
 
         <div class="mb-3">
             <label for="selectkiller" class="form-label">Selectionnez votre Tueur préféré :</label>
-            <select id="selectkiller" class="form-select" aria-label="Default select example">
-                <option selected value="<?= $resulttueur->NOM_PERSO ?>"><?= $resulttueur->NOM_PERSO ?> (actuel)</option>
+            <select id="selectkiller" name="selectkiller" class="form-select" aria-label="Default select example">
+                <option selected value="<?= $resulttueur->ID_PERSONNAGE ?>"><?= $resulttueur->NOM_PERSO ?> (actuel)</option>
                 <?php for($i = 0; $i < count($resultkillerupdate); $i++){ ?>
-                    <option value="<?= $resultkillerupdate[$i]->NOM_PERSO ?>"><?= $resultkillerupdate[$i]->NOM_PERSO ?></option>
+                    <option value="<?= $resultkillerupdate[$i]->ID_PERSONNAGE ?>"><?= $resultkillerupdate[$i]->NOM_PERSO ?></option>
                 <?php } ?>
             </select>
         </div>
 
         <div class="mb-3">
             <label for="selectrank" class="form-label">Selectionnez votre Rank :</label>
-            <select id="selectrank" class="form-select" aria-label="Default select example">
+            <select id="selectrank" name="selectrank" class="form-select" aria-label="Default select example">
                 <option selected value="<?= $resultprofil->RANK_JOUEUR ?>"><?= $resultprofil->RANK_JOUEUR ?> (actuel)</option>
                 <?php for($i = 0; $i < count($resultrankupdate); $i++){ ?>
                     <option value="<?= $resultrankupdate[$i]->NOM_RANK ?>"><?= $resultrankupdate[$i]->NOM_RANK ?></option>
@@ -97,8 +97,8 @@
         </div>
 
         <div class="mb-3">
-            <label for="selectrank" class="form-label">Selectionnez votre plateforme :</label>
-            <select id="selectrank" class="form-select" aria-label="Default select example">
+            <label for="selectplateforme" class="form-label">Selectionnez votre plateforme :</label>
+            <select id="selectplateforme" name="selectplateforme" class="form-select" aria-label="Default select example">
                 <option selected value="<?= $resultprofil->NOM_PLATEFORME ?>"><?= $resultprofil->NOM_PLATEFORME ?> (actuel)</option>
                 <?php for($i = 0; $i < count($resultplateformeupdate); $i++){ ?>
                     <option value="<?= $resultplateformeupdate[$i]->NOM_PLATEFORME ?>"><?= $resultplateformeupdate[$i]->NOM_PLATEFORME ?></option>
@@ -107,7 +107,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="inputpseudoplat" class="form-label">Pseudo sur plateforme* :</label>
+            <label for="inputpseudoplat" class="form-label">Pseudo sur plateforme :</label>
             <input type="text" name="pseudoplat" class="form-control" id="inputpseudoplat" placeholder="Entrez votre pseudo..." value="<?= $resultprofil->PSEUDO_PLATEFORME ?>">
             <?= $msgpseudoplat ?>
         </div>
@@ -115,7 +115,7 @@
         <div class="mb-3">
             <label for="inputtime" class="form-label">Temps de jeu :</label>
             <input type="number" name="time" class="form-control" id="inputtime" placeholder="Entrez votre temps de jeu..." value="<?= $resultprofil->NOMBRES_HEURES ?>">
-            <?= $msgpseudoplat ?>
+            <?= $msgtime ?>
         </div>
 
         <div class="text-center mt-4">

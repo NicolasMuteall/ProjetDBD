@@ -7,7 +7,7 @@
     //var_dump($resultprofil);
     
     /*------------------------------------------RECUP LE NOM DU PERSONNAGE TUEUR DE LA TABLE JOUEUR ---------------------------------------------*/
-    $killerprofil = $cnx->prepare('select NOM_PERSO from personnage JOIN joueur ON personnage.ID_PERSONNAGE = joueur.ID_TUEUR where ID_TUEUR = "'.$resultprofil->ID_TUEUR.'"');
+    $killerprofil = $cnx->prepare('select NOM_PERSO, ID_PERSONNAGE from personnage JOIN joueur ON personnage.ID_PERSONNAGE = joueur.ID_TUEUR where ID_TUEUR = "'.$resultprofil->ID_TUEUR.'"');
     $killerprofil -> bindvalue('PSEUDO_JOUEUR', $_SESSION['pseudo']);
     $killerprofil -> execute();
     $resulttueur = $killerprofil->fetch(PDO::FETCH_OBJ);

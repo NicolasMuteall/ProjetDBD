@@ -5,6 +5,7 @@
     $msgpseudo = "";
     $msgmail = "";
     $msgpseudoplat = "";
+    $msgtime = "";
 
     if($resultprofil->NOM_ROLE === "Tueur"){ // Permet par la suite de trier les compétences de survivants et tueurs
         $rolecompt = 1;
@@ -12,17 +13,35 @@
         $rolecompt = 0;
     }
 
-    /*-----------------------------------------INSERTION DES COMPETENCES EN BASE DE DONNEES--------------------------------------*/
-    if(isset($_GET['IDcomp'])){
+    /*-----------------------------------------UPDATE DES COMPETENCES EN BASE DE DONNEES--------------------------------------*/
+    if(isset($_GET['IDcomp']) && isset($_GET['numselect'])){
         $idcomp = $_GET['IDcomp'];
-        $updatecomp = $cnx->prepare('UPDATE joueur SET ID_COMPETENCE1 = "'.$idcomp.'" WHERE PSEUDO_JOUEUR ="'.$_SESSION['pseudo'].'"');
-            $res3 = $updatecomp -> execute();
+        $numselect = $_GET['numselect'];
+        $propriete = '';
+        //var_dump($idcomp, $numselect);
 
-            if($res3){
-                header('Location=profil.php?test=refresh');
-            }
+        if($numselect === 'selectcomp1'){
+            $propriete = 'ID_COMPETENCE1';
+        }
+        if($numselect === 'selectcomp2'){
+            $propriete = 'ID_COMPETENCE2';
+        }
+        if($numselect === 'selectcomp3'){
+            $propriete = 'ID_COMPETENCE3';
+        }
+        if($numselect === 'selectcomp4'){
+            $propriete = 'ID_COMPETENCE4';
+        }
+
+        $updatecomp = $cnx->prepare('UPDATE joueur SET '.$propriete.' = "'.$idcomp.'" WHERE PSEUDO_JOUEUR ="'.$_SESSION['pseudo'].'"');
+        $res3 = $updatecomp -> execute();
+
+        if($res3){
+            header('Location:profil.php?test=refresh');
+        }
     }
 
+    /*--------------------------------------UPDATE DE L'IMAGE EN BDD AVEC VERIF-----------------------------------------*/
     if(isset($_POST['img_submit'])){
 
         $img_name = $_FILES['img_upload']['name'];
@@ -62,6 +81,7 @@
         }
     }
 
+    /*---------------------------------------------UPDATE DU ROLE JOUEUR EN BASE DE DONNEES-------------------------------------*/
     if(isset($_POST['submitrole'])){ 
 
             $q2 = $cnx->prepare('UPDATE joueur SET NOM_ROLE = "'.$_POST['selectrole'].'" WHERE PSEUDO_JOUEUR ="'.$_SESSION['pseudo'].'"');
@@ -72,24 +92,32 @@
             }
     }
 
+    /*-----------------------------------------------UPDATE DES INPUTS TEXT EN BASE DE DONNES------------------------------------*/
     if(isset($_POST['submit'])){ 
         
         if(!empty($_POST['pseudo']) && !empty($_POST['mail'])){
             $pseudo = htmlspecialchars(strip_tags($_POST['pseudo']));
+            $pseudoplat = htmlspecialchars(strip_tags($_POST['pseudoplat']));
+            $time = htmlspecialchars(strip_tags($_POST['time']));
             $mail = htmlspecialchars(strip_tags($_POST['mail']));
+            $selectrank = $_POST['selectrank'];
+            $selectkiller = $_POST['selectkiller'];
+            $selectplateforme = $_POST['selectplateforme'];
+            $errorpseudoplat = false;
+            $errortime = false;
 
             $datapseudo = $cnx->prepare('select PSEUDO_JOUEUR from joueur where PSEUDO_JOUEUR = "'.$pseudo.'" and PSEUDO_JOUEUR != "'.$resultprofil->PSEUDO_JOUEUR.'"');
             $datapseudo -> bindvalue('PSEUDO_JOUEUR', $pseudo);
             $datapseudo -> execute();
             $resultpseudo = $datapseudo->fetch(PDO::FETCH_OBJ);                          
-            var_dump($resultpseudo);
+            //var_dump($resultpseudo);
 
             
             $datamail = $cnx->prepare('select MAIL_JOUEUR from joueur where MAIL_JOUEUR = "'.$mail.'" and MAIL_JOUEUR != "'.$resultprofil->MAIL_JOUEUR.'"');
             $datamail -> bindvalue('MAIL_JOUEUR', $mail);
             $datamail -> execute();
             $resultmail = $datamail->fetch(PDO::FETCH_OBJ);                            
-            var_dump($resultmail);
+            //var_dump($resultmail);
 
             if(!preg_match('/^([a-zA-Z0-9-_]{4,20})$/', $pseudo)){
                 $msgpseudo = '<p style="color:red;">Le pseudo saisi est invalide : <br> Le pseudo doit contenir entre 4 et 20 caractères et ne peut contenir que des lettres minuscules, majuscules, des chiffres, "-", "_".</p>';
@@ -107,9 +135,19 @@
                 $msgmail = '<p style="color:red;">Le format d\'adresse email est invalide.</p>';
             }
 
-            if(preg_match('/^([a-zA-Z0-9-_]{4,20})$/', $pseudo) && $resultpseudo === false && $resultmail === false && preg_match('/^[a-z][a-z_0-9\.\-]+@[a-z_0-9\.\-]+\.[a-z]{2,3}$/', $mail)){      
+            if(!empty($pseudoplat) && !preg_match('/^([a-zA-Z0-9-_]{4,20})$/', $pseudoplat)){
+                $msgpseudoplat = '<p style="color:red;">Le format du pseudo "'.$pseudoplat.'" est invalide.</p>';
+                $errorpseudoplat = true;
+            }
+
+            if(!empty($time) && !preg_match('/^[0-9]{1,4}$/', $time)){
+                $msgtime = '<p style="color:red;">Le nombre d\'heures est limité à 9999h.</p>';
+                $errortime = true;
+            }
+
+            if(preg_match('/^([a-zA-Z0-9-_]{4,20})$/', $pseudo) && $resultpseudo === false && $resultmail === false && preg_match('/^[a-z][a-z_0-9\.\-]+@[a-z_0-9\.\-]+\.[a-z]{2,3}$/', $mail) && $errorpseudoplat === false && $errortime === false){      
                 
-                $q = $cnx->prepare('UPDATE joueur SET PSEUDO_JOUEUR = "'.$pseudo.'", MAIL_JOUEUR = "'.$mail.'" WHERE PSEUDO_JOUEUR ="'.$_SESSION['pseudo'].'"');
+                $q = $cnx->prepare('UPDATE joueur SET PSEUDO_JOUEUR = "'.$pseudo.'", MAIL_JOUEUR = "'.$mail.'", RANK_JOUEUR = "'.$selectrank.'", ID_TUEUR = "'.$selectkiller.'", NOM_PLATEFORME = "'.$selectplateforme.'", PSEUDO_PLATEFORME = "'.$pseudoplat.'", NOMBRES_HEURES = "'.$time.'" WHERE PSEUDO_JOUEUR ="'.$_SESSION['pseudo'].'"');
                 $res = $q -> execute();
 
                 if($res){

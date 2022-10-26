@@ -5,9 +5,7 @@ let select3 = document.getElementById('selectcomp3');
 let select4 = document.getElementById('selectcomp4');
 
 function insert(select){
-    alert(select.value);
     window.location.href = "updateprofil.php?IDcomp="+select.value+"&numselect="+select.id;
-    //window.location.href = "updateprofil.php#selectcomp1";
 }
 
 select1.addEventListener('change', function () { insert(this); });
