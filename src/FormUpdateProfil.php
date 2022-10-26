@@ -12,6 +12,17 @@
         $rolecompt = 0;
     }
 
+    /*-----------------------------------------INSERTION DES COMPETENCES EN BASE DE DONNEES--------------------------------------*/
+    if(isset($_GET['IDcomp'])){
+        $idcomp = $_GET['IDcomp'];
+        $updatecomp = $cnx->prepare('UPDATE joueur SET ID_COMPETENCE1 = "'.$idcomp.'" WHERE PSEUDO_JOUEUR ="'.$_SESSION['pseudo'].'"');
+            $res3 = $updatecomp -> execute();
+
+            if($res3){
+                header('Location=profil.php?test=refresh');
+            }
+    }
+
     if(isset($_POST['img_submit'])){
 
         $img_name = $_FILES['img_upload']['name'];

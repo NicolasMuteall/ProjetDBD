@@ -125,5 +125,5 @@
         </div>
 
     </form>
-
 </div>
+<script src="../JS/scriptupdate.js"></script>
