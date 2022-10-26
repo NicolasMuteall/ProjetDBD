@@ -114,7 +114,7 @@
 
         <div class="mb-3">
             <label for="inputtime" class="form-label">Temps de jeu :</label>
-            <input type="text" name="time" class="form-control" id="inputtime" placeholder="Entrez votre temps de jeu..." value="<?= $resultprofil->NOMBRES_HEURES ?>">
+            <input type="number" name="time" class="form-control" id="inputtime" placeholder="Entrez votre temps de jeu..." value="<?= $resultprofil->NOMBRES_HEURES ?>">
             <?= $msgpseudoplat ?>
         </div>
 
