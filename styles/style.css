@@ -185,8 +185,8 @@ header {
 
 #personnages {
   margin-top: 7vh;
-  padding-left: 7em;
-  padding-right: 7em;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .ligneperso {
@@ -208,9 +208,8 @@ header {
 }
 
 .imgperso {
-  height: 10rem;
-  width: 14.8rem;
-  margin-top: 1.5em;
+  height: 80%;
+  width: 100%;
 }
 
 #nomperso {
@@ -309,9 +308,9 @@ header {
   min-height: 20rem;
 }
 
-#tableauprofil {
+/*#tableauprofil {
   width: 25rem !important;
-}
+}*/
 
 #listcomp {
   font-size: 0.75em;
@@ -324,6 +323,10 @@ header {
   background-color: #212529;
 }
 
+#enctypeinput{
+  width: 60%;
+}
+
 .formsize {
   width: 70%;
 }
@@ -332,3 +335,6 @@ header {
   width: 75%;
   margin: auto;
 }
+
+/*---------------------------------------------------PAGE JOUEUR-------------------------------------------------*/
+

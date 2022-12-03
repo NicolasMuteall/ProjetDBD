@@ -33,7 +33,7 @@
                   <a class="nav-link" href="/ProjetDBD/controller/role.php">Personnages</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Joueurs</a>
+                  <a class="nav-link" href="/ProjetDBD/controller/joueur.php">Joueurs</a>
                 </li>
                 <li class="nav-item">
                   <?= $linkhead ?>

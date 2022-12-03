@@ -1,0 +1,13 @@
+<?php
+    session_start();
+    require('../src/TestEmptySession.php');
+    require('../src/Connect.php');
+    require('../src/requetes/listplayer.php');
+    //require('../src/FormUpdateProfil.php');
+    //require('../src/UpdateProfilReq.php');
+    require('../templates/TempHead.php');
+    var_dump($_SESSION['pseudo']);
+    require('../src/Disconnect.php');
+    require('../templates/TempJoueur.php');
+    require('../templates/TempFooter.php');
+?>

@@ -18,7 +18,7 @@
         $idcomp = $_GET['IDcomp'];
         $numselect = $_GET['numselect'];
         $propriete = '';
-        //var_dump($idcomp, $numselect);
+        var_dump($idcomp, $numselect);
 
         if($numselect === 'selectcomp1'){
             $propriete = 'ID_COMPETENCE1';
@@ -37,7 +37,7 @@
         $res3 = $updatecomp -> execute();
 
         if($res3){
-            header('Location:profil.php?test=refresh');
+            //header('Location:profil.php?test=refresh');
         }
     }
 
@@ -50,7 +50,7 @@
         $typeFile = $_FILES['img_upload']['type'];
         $typeimg = ['image/png', 'image/jpg', 'image/jpeg'];
         $extension = explode('.', $img_name);
-        $folder = '../assets/Joueurs/';
+        $folder = '../assets/Joueurs/'; //Dossier dans lequel je veux placer l'image uploadée
         //var_dump($_FILES, $extension, count($extension));
         //var_dump($_SERVER);
         

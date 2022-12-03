@@ -1,10 +1,10 @@
 <div id="modifinfo" class="container border border-secondary rounded shadow-lg formulaire p-3">
     <h3 class="mb-5 police2">Modifier les informations de votre profil:</h3>
 
-    <form action="" method="post" class="d-flex mb-5" enctype="multipart/form-data">
-        <div class="mx-auto d-flex">
+    <form action="" method="post" class="mb-5" enctype="multipart/form-data">
+        <div class="mx-auto text-center">
         <img class="imgprofil" class="mt-4 mb-3" src="../assets/Joueurs/<?= $resultprofil->REF_IMAGE_JOUEUR ?>" alt="mastermind">
-        <div class="mt-5 ms-5">
+        <div class="mt-5 mx-auto" id="enctypeinput">
             <label for="formFile" class="form-label">Sélectionner une autre image :</label>
             <input class="form-control" type="file" name="img_upload" id="formFile">
             <?= $msgerrorimg ?>
