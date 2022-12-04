@@ -1,12 +1,13 @@
 <?php
     session_start();
     require('../src/TestEmptySession.php');
+    //require('../src/RedirectSessInconnu.php');
     require('../src/Connect.php');
-    require('../src/requetes/listplayer.php');
-    //require('../src/FormUpdateProfil.php');
     require('../templates/TempHead.php');
+    require('../src/requetes/PublicProfilReq.php');
+    require('../src/TestRoleProfil.php');
     var_dump($_SESSION['pseudo']);
     require('../src/Disconnect.php');
-    require('../templates/TempJoueur.php');
+    require('../templates/TempPublicProfil.php');
     require('../templates/TempFooter.php');
 ?>

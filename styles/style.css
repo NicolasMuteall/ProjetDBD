@@ -138,6 +138,26 @@ header {
   margin-bottom:0;
 }
 
+/*----------------------------------------------------------PAGE INDEX-----------------------------------------------------*/
+
+.imgarticle {
+  max-width: 10rem;
+  max-height: 10rem;
+}
+
+.colorarticle{
+  background-color: #212426;
+}
+
+#p-article {
+  min-height: 22rem;
+}
+
+#titre-article {
+  min-height: 7rem;
+}
+
+
 /*----------------------------------------------------------PAGE ROLE-----------------------------------------------------*/
 
 #boiterole{
@@ -248,6 +268,7 @@ header {
 }
 
 .boxcomp{
+  background-color: #212426;
   display: inline-block;
   min-height: 30rem;
   width: 20rem;
@@ -255,7 +276,7 @@ header {
   margin-top: 5vh;
   margin-bottom: 10vh;
   padding: 1rem;
-  box-shadow: 5px 5px 10px #202020, -5px -5px 10px #464646;
+  box-shadow: 5px 5px 10px #202020/*, -5px -5px 10px #464646*/;
 }
 
 .boxcomp:hover {
@@ -338,3 +359,24 @@ header {
 
 /*---------------------------------------------------PAGE JOUEUR-------------------------------------------------*/
 
+#img-rank {
+  height: 3rem;
+  width: 3rem;
+}
+
+#img-joueur {
+  clip-path:ellipse(50% 50%);
+  height: 3rem;
+  width: 3rem;
+}
+
+.lien {
+  text-decoration: none;
+  color: white;
+}
+
+/*---------------------------------------------------PAGE ADMIN-------------------------------------------------*/
+
+#formadmin {
+  width: 50%;
+}

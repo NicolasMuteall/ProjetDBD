@@ -18,7 +18,7 @@
 <body class="bg-dark text-white">
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #001219;">
         <div class="container-fluid">
-            <a id="logo" class="navbar-brand" href="#">
+            <a id="logo" class="navbar-brand" href="/ProjetDBD/index.php">
                 <img src="/ProjetDBD/assets/logo.png" alt="logodbd" width="60" height="54">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,9 +26,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul id="listnav" class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="/ProjetDBD/index.php">Accueil</a>
-                </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/ProjetDBD/controller/role.php">Personnages</a>
                 </li>
@@ -45,10 +42,6 @@
                   <a class="nav-link" href="/ProjetDBD/controller/inscription.php">Inscription</a>
                 </li>
               </ul>
-              <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Recherche..." aria-label="Search">
-                <button class="btn btn-outline-secondary" type="submit">Rechercher</button>
-              </form>
             </div>
         </div>
     </nav>
