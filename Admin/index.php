@@ -1,4 +1,8 @@
 <?php
+    session_start();
+    require('../src/Connect.php');
+    require('src/FormConnexion.php');
+    require('../src/Disconnect.php');
     require('templates/TempHead.php');
     require('templates/TempIndex.php');
     require('templates/TempFooter.php');

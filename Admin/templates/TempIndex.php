@@ -10,7 +10,7 @@
             <input type="password" class="form-control" name="mdp" id="exampleInputPassword1" placeholder="Entrez votre mot de passe..." value="<?php if(isset($_POST['mdp'])){ echo $_POST['mdp']; } ?>">
         </div>
         <div class="text-center mt-4">
-            <?= ''/*$msgerror*/ ?>
+            <?= $msgerror ?>
             <button type="submit" name="connexion" class="btn btn-primary mb-3">Connexion</button>
         </div>
         

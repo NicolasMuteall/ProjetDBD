@@ -1,0 +1,32 @@
+/*----------------------------------------------------------ACCUEIL--------------------------------------------------------*/
+.imgarticle {
+    max-width: 10rem;
+    max-height: 10rem;
+  }
+  
+  #titre-article {
+    min-height: 5rem;
+  }
+
+  .boxcomp{
+    display: inline-block;
+    min-height: 20rem;
+    width: 20rem;
+    margin: auto;
+    margin-top: 5vh;
+    margin-bottom: 10vh;
+    padding: 1rem;
+    box-shadow: 5px 5px 10px #202020/*, -5px -5px 10px #464646*/;
+  }
+
+  .modifsupp {
+    display: inline-block;
+  }
+
+  .lien {
+    text-decoration: none;
+  }
+
+  .rouge {
+    color: red;
+  }
