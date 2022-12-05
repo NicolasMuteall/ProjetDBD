@@ -1,11 +1,13 @@
 /*----------------------------------------------------------ACCUEIL--------------------------------------------------------*/
 .imgarticle {
+    width: 10rem;
+    height: 10rem;
     max-width: 10rem;
     max-height: 10rem;
   }
   
   #titre-article {
-    min-height: 5rem;
+    min-height: 3rem;
   }
 
   .boxcomp{
@@ -13,10 +15,10 @@
     min-height: 20rem;
     width: 20rem;
     margin: auto;
-    margin-top: 5vh;
-    margin-bottom: 10vh;
+    /*margin-top: 5vh;*/
+    /*margin-bottom: 10vh;*/
     padding: 1rem;
-    box-shadow: 5px 5px 10px #202020/*, -5px -5px 10px #464646*/;
+    box-shadow: 0px 0px 15px #4a4949/*, -5px -5px 10px #464646*/;
   }
 
   .modifsupp {
@@ -29,4 +31,16 @@
 
   .rouge {
     color: red;
+  }
+
+  /*----------------------------------------------------------PAGE ADD ARTICLE----------------------------------------------------*/
+
+  .formulaire {
+    width: 70%;
+  }
+
+  /*----------------------------------------------------------PAGE UPDATE ARTICLE----------------------------------------------------*/
+
+  #formupdate {
+    height: 30rem !important;
   }

@@ -1,0 +1,11 @@
+<?php
+    session_start();
+    require('../src/verifAdmin.php');
+    require('../../src/Connect.php');
+    require('../src/FormAddArticle.php');
+    //require('../src/requetes/article.php');
+    require('../../src/Disconnect.php');
+    require('../templates/TempHeaderAdmin.php');
+    require('../templates/TempAddArticle.php');
+    require('../templates/TempFooter.php');
+?>
