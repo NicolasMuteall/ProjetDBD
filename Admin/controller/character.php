@@ -1,0 +1,11 @@
+<?php
+    session_start();
+    require('../src/verifAdmin.php');
+    require('../src/RedirectLinkAdd.php');
+    require('../../src/Connect.php');
+    require('../src/requetes/personnage.php');
+    require('../../src/Disconnect.php');
+    require('../templates/TempHeaderAdmin.php');
+    require('../templates/TempCharacter.php');
+    require('../templates/TempFooter.php');
+?>

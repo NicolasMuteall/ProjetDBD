@@ -44,3 +44,37 @@
   #formupdate {
     height: 30rem !important;
   }
+
+/*----------------------------------------------------------PAGE TYPE PERSO----------------------------------------------------*/
+
+.btn-type {
+  display: inline-block;
+  margin-top: 10vh;
+}
+
+.btns-box {
+  display: inline-block;
+}
+
+/*----------------------------------------------------------PAGE PERSONNAGE----------------------------------------------------*/
+
+#personnages {
+  margin-top: 7vh;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.ligneperso {
+  height: auto;
+}
+
+.boitetueur {
+  height: 15rem;
+  width: 20rem;
+  margin: auto;
+}
+
+.imgperso {
+  height: 10rem;
+  width: 15rem;
+}

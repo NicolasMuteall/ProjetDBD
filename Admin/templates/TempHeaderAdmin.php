@@ -25,7 +25,7 @@
                   <a class="nav-link" href="/ProjetDBD/Admin/controller/accueil.php">Articles</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/ProjetDBD/controller/joueur.php">Personnages</a>
+                  <a class="nav-link" href="/ProjetDBD/Admin/controller/TypePerso.php">Personnages</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/ProjetDBD/controller/inscription.php">Joueurs</a>
